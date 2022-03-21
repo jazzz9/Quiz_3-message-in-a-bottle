@@ -15,12 +15,15 @@
 	</head>
 
 	<body style="margin: 0; overflow: hidden;">
+		
 		<a-scene 
 		vr-mode-ui="enabled: false"
         	arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         	renderer="antialias: true; alpha: true">
-		
+			
 		<!-- we dont have camera, assets, items, etc. in here yet -->
+		<a-camera gps-camera rotation-reader></a-camera>
+		<a-box color="yellow" gps-entity-place="latitude: <43.659806979062786>; longitude: <-79.38317091474575>"/>
 
 		</a-scene>
 	</body>
