@@ -1,3 +1,4 @@
+//
 window.onload = () => {
      let places = staticLoadPlaces();
      renderPlaces(places);
@@ -8,8 +9,8 @@ function staticLoadPlaces() {
         {
             name: 'MyModel',
             location: {
-                lat: <your-latitude>,
-                lng: <your-longitude>,
+                lat: 43.659806979062786,
+                lng: -79.38317091474575,
             }
         },
     ];
@@ -24,10 +25,10 @@ function renderPlaces(places) {
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        model.setAttribute('gltf-model', './assets/MyModel/scene.gltf');
+        model.setAttribute('gltf-model', './assets/MyModel/ring.obj');
         model.setAttribute('rotation', '0 180 0');
         model.setAttribute('animation-mixer', '');
-        model.setAttribute('scale', '0.5 0.5 0.5');
+        model.setAttribute('scale', '5 5 5');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
